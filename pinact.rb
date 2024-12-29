@@ -5,21 +5,21 @@
 class Pinact < Formula
   desc "Pin GitHub Actions versions"
   homepage "https://github.com/suzuki-shunsuke/pinact"
-  version "1.1.1"
+  version "1.1.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/suzuki-shunsuke/pinact/releases/download/v1.1.1/pinact_darwin_amd64.tar.gz"
-      sha256 "b00cdcd44acd8622971ae1ef1e8816160d8703be7bdb6bba52a95e27df53a0d1"
+      url "https://github.com/suzuki-shunsuke/pinact/releases/download/v1.1.2/pinact_darwin_amd64.tar.gz"
+      sha256 "862fb62a098b6b98fc859754737548be3e18b060a6b8bf786b36b9b49486f7a2"
 
       def install
         bin.install "pinact"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/suzuki-shunsuke/pinact/releases/download/v1.1.1/pinact_darwin_arm64.tar.gz"
-      sha256 "9d1b466ce3d7ebab7911394b15eb7963bdadeb45076b6d818f9ad9171cde9d00"
+      url "https://github.com/suzuki-shunsuke/pinact/releases/download/v1.1.2/pinact_darwin_arm64.tar.gz"
+      sha256 "b2827d65da6adee26d8fa1b81514c071f3cf2563bff67a6af3a122a194a28c33"
 
       def install
         bin.install "pinact"
@@ -30,8 +30,8 @@ class Pinact < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/suzuki-shunsuke/pinact/releases/download/v1.1.1/pinact_linux_amd64.tar.gz"
-        sha256 "e7df2cb7c249a59a5b2d9f6180a96233c5875bbb7198042f228ce42871b01cf1"
+        url "https://github.com/suzuki-shunsuke/pinact/releases/download/v1.1.2/pinact_linux_amd64.tar.gz"
+        sha256 "511f3e42e1bd94a3aac5ef4d845f4a6f5008c32f0c68c26ead01bb69dca4ed2d"
 
         def install
           bin.install "pinact"
@@ -40,8 +40,8 @@ class Pinact < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/suzuki-shunsuke/pinact/releases/download/v1.1.1/pinact_linux_arm64.tar.gz"
-        sha256 "80a130f9b7d45b42bdabf9fce08efbb6c2c14493b2eff0ebc062ed16e6af4c2b"
+        url "https://github.com/suzuki-shunsuke/pinact/releases/download/v1.1.2/pinact_linux_arm64.tar.gz"
+        sha256 "2b90dd94c22790f99e153d2931b9929137bf9dd5268dfd742d14c30ae016940a"
 
         def install
           bin.install "pinact"
