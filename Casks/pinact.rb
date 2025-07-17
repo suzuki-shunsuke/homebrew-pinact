@@ -2,7 +2,7 @@
 cask "pinact" do
   desc "Pin GitHub Actions versions"
   homepage "https://github.com/suzuki-shunsuke/pinact"
-  version "3.3.1"
+  version "3.3.2"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,23 +12,29 @@ cask "pinact" do
 
   on_macos do
     on_intel do
-      url "https://github.com/suzuki-shunsuke/pinact/releases/download/v3.3.1/pinact_darwin_amd64.tar.gz"
-      sha256 "290704fa3fc5b4310b468c7c7163123d23cc83e5d45e417bf7c134734b945bf5"
+      url "https://github.com/suzuki-shunsuke/pinact/releases/download/v3.3.2/pinact_darwin_amd64.tar.gz"
+      sha256 "90d1dd7267926ad8d65a55995ddae5bc8ef1e5b1c8691da59f35ee98670d9e69"
     end
     on_arm do
-      url "https://github.com/suzuki-shunsuke/pinact/releases/download/v3.3.1/pinact_darwin_arm64.tar.gz"
-      sha256 "2fd15e129d8a34d1c7c128f64e12bb05c69156ea3b6891eccee406092d12f3fb"
+      url "https://github.com/suzuki-shunsuke/pinact/releases/download/v3.3.2/pinact_darwin_arm64.tar.gz"
+      sha256 "20ecf390e5f4c2ec0c20f76ca69155fd5526515f5365d2c4c5d50453b8962097"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/suzuki-shunsuke/pinact/releases/download/v3.3.1/pinact_linux_amd64.tar.gz"
-      sha256 "c8247bc329780958295b4eb8a4e65dfe0a80572bc65f0ac6b7c9ae223668d028"
+      url "https://github.com/suzuki-shunsuke/pinact/releases/download/v3.3.2/pinact_linux_amd64.tar.gz"
+      sha256 "4535b1db78e419241dfbe82b2b1eafd0cc8d72eb8f6217180038d7a9e54af4ec"
     end
     on_arm do
-      url "https://github.com/suzuki-shunsuke/pinact/releases/download/v3.3.1/pinact_linux_arm64.tar.gz"
-      sha256 "3a8d8aec0695dbc7b4feb90cd5157b8093646416ebd3a97cb47ae7f4b27cf7e8"
+      url "https://github.com/suzuki-shunsuke/pinact/releases/download/v3.3.2/pinact_linux_arm64.tar.gz"
+      sha256 "995f0cdef5a4f18401825371668ffeb915d7633a41fa086f92c6fb459eaba32d"
+    end
+  end
+
+  postflight do
+    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/pinact"]
     end
   end
 
