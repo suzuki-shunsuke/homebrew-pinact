@@ -2,7 +2,7 @@
 cask "pinact" do
   desc "Pin GitHub Actions versions"
   homepage "https://github.com/suzuki-shunsuke/pinact"
-  version "3.4.1"
+  version "3.4.2"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,28 +12,28 @@ cask "pinact" do
 
   on_macos do
     on_intel do
-      url "https://github.com/suzuki-shunsuke/pinact/releases/download/v3.4.1/pinact_darwin_amd64.tar.gz"
-      sha256 "97cdbd4ba2a0d6bddfa0bc26623562fff6f26bcaaac25b4a133a55f48eb4a076"
+      url "https://github.com/suzuki-shunsuke/pinact/releases/download/v3.4.2/pinact_darwin_amd64.tar.gz"
+      sha256 "5e2a94bc37bdaef84f409b0b811f4e56ebfffae227624b86d58a172085ab73aa"
     end
     on_arm do
-      url "https://github.com/suzuki-shunsuke/pinact/releases/download/v3.4.1/pinact_darwin_arm64.tar.gz"
-      sha256 "e3a5e2c22f13d12865efc49c21b16435a51dc6f6fabb8c6cde756265a0f9d085"
+      url "https://github.com/suzuki-shunsuke/pinact/releases/download/v3.4.2/pinact_darwin_arm64.tar.gz"
+      sha256 "354811a84886c99422269b39deec399c8a42ce97fcf2e586c4f2f6b57e1e63ee"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/suzuki-shunsuke/pinact/releases/download/v3.4.1/pinact_linux_amd64.tar.gz"
-      sha256 "a805f69671f9713313da6bf870baab29c320b3f4fe304220ebb24a63a2234347"
+      url "https://github.com/suzuki-shunsuke/pinact/releases/download/v3.4.2/pinact_linux_amd64.tar.gz"
+      sha256 "cf2f26ff37f195fadb7e5368cd618733107f7ea92c808ca4256521fc4bd6ea4f"
     end
     on_arm do
-      url "https://github.com/suzuki-shunsuke/pinact/releases/download/v3.4.1/pinact_linux_arm64.tar.gz"
-      sha256 "5f7570c541f572296efbb6544dfa5e44d1d8d6aca6f2113d7ad44ea72a0c2f9f"
+      url "https://github.com/suzuki-shunsuke/pinact/releases/download/v3.4.2/pinact_linux_arm64.tar.gz"
+      sha256 "cf109ed679276d60414366719ea721744f75f7e27f6f7b8394c66f3412f86a64"
     end
   end
 
   postflight do
-    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
+    if OS.mac?
       system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/pinact"]
     end
   end
