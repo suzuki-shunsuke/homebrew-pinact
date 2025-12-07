@@ -3,7 +3,7 @@ cask "pinact" do
   name "pinact"
   desc "Pin GitHub Actions versions"
   homepage "https://github.com/suzuki-shunsuke/pinact"
-  version "3.4.5"
+  version "3.4.6"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,22 +14,22 @@ cask "pinact" do
   on_macos do
     on_intel do
       url "https://github.com/suzuki-shunsuke/pinact/releases/download/v#{version}/pinact_darwin_amd64.tar.gz"
-      sha256 "20fecec1bd5eb27093e817401fd7f92856edadc78db0c8903fe0b7d9ad335057"
+      sha256 "13b6167ea25befa2115f7e44bba2cff5b2fb6448d98b3bd7b4592eda973b7b12"
     end
     on_arm do
       url "https://github.com/suzuki-shunsuke/pinact/releases/download/v#{version}/pinact_darwin_arm64.tar.gz"
-      sha256 "1b067e4990dadafe2e916db00c5e6d17e3faa9885d91bd99ce2d8b1487281299"
+      sha256 "1d6e8239537eada29e94285ea1e5d1a1db27db9320a9621c9e1d6427f118aee4"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/suzuki-shunsuke/pinact/releases/download/v#{version}/pinact_linux_amd64.tar.gz"
-      sha256 "30681d82e66b1b6bed1280715ef21c0ef7d036340433b375e272cd7a6046c9f7"
+      sha256 "1876ddd571ba8452c07a1b9b9a325bdfe074a467be9a81f3fd42743bf6043618"
     end
     on_arm do
       url "https://github.com/suzuki-shunsuke/pinact/releases/download/v#{version}/pinact_linux_arm64.tar.gz"
-      sha256 "3b5e9595e01692b9acff10dc79c98e1e883924327af67693b5798a7177968a92"
+      sha256 "6aefea25eb7b9d1c7d03e6b42564f20d2f30efefecb991428b33348418397c14"
     end
   end
 
